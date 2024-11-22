@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           backyard.ai/chat
 @namespace      github.com/eradev
-@version        1.0.0
+@version        1.1.0
 @description    Styles for backyard.ai/chat
 @author         Eradev
 @updateURL      https://raw.githubusercontent.com/Eradev/backyardai-styles/master/backyardai.user.css
@@ -11,6 +11,8 @@
 @var color colorPlainText      "Plain text color"            #cfd8db
 @var color colorQuotesText     "Quotes text color"           #f1dbbd
 @var color colorAsterisksText  "Asterisks text color"        #a5c7e6
+
+@var text chatFontSize         "Chat font size"              16px
 
 @var text sizeCharPics         "Character pics size"         40px
 @var checkbox keepRatio        "Keep character pic ratio"    0
@@ -45,6 +47,11 @@
         /* Background */
         .r-15rkbz5 {
             background-color: colorChatBackground;
+        }
+        
+        /* Font size */
+        .r-ubezar {
+            font-size: chatFontSize;
         }
 
         /* Plain-text */
