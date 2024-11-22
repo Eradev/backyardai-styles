@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           backyard.ai/chat
 @namespace      github.com/eradev
-@version        1.2.1
+@version        1.3.0
 @description    Styles for backyard.ai/chat
 @author         Eradev
 @updateURL      https://raw.githubusercontent.com/Eradev/backyardai-styles/master/backyardai.user.css
@@ -16,6 +16,7 @@
 
 @var text chatFontSize         "Chat font size"              16px
 @var text chatMaxWidth         "Chat max width"              876px
+@var text chatBubbleMaxWith    "Chat bubble max width"       900px
 
 @var text sizeCharPics         "Character pics size"         40px
 @var checkbox keepRatio        "Keep character pic ratio"    0
@@ -49,6 +50,11 @@
     /* Chat max width */
     .r-1ohmcn5 {
         max-width: chatMaxWidth;
+    }
+
+    /* Chat bubble max width */
+    .r-qd89wu {
+        max-width: chatBubbleMaxWidth;
     }
     
     if autoHideLeftMenu {
