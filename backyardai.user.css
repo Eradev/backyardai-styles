@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           backyard.ai/chat
 @namespace      github.com/eradev
-@version        1.1.0
+@version        1.2.0
 @description    Styles for backyard.ai/chat
 @author         Eradev
 @updateURL      https://raw.githubusercontent.com/Eradev/backyardai-styles/master/backyardai.user.css
@@ -12,10 +12,14 @@
 @var color colorQuotesText     "Quotes text color"           #f1dbbd
 @var color colorAsterisksText  "Asterisks text color"        #a5c7e6
 
+@var checkbox autoHideLeftMenu "Auto-hide left menu"         0
+
 @var text chatFontSize         "Chat font size"              16px
+@var text chatMaxWidth         "Chat max width"              876px
 
 @var text sizeCharPics         "Character pics size"         40px
 @var checkbox keepRatio        "Keep character pic ratio"    0
+
 @var checkbox addAsterisks     "Add asterisks"               0
 @var checkbox editAlignBottom  "Align edit button to bottom" 0
 
@@ -34,10 +38,76 @@
     }
     
     /* Align edit button to bottom */
-    if editAlignBottom {
+    if editAlignBottom {https://backyard.ai/chat/cm3rvnc5k7nr614czbyn2t2wb
         div:has(>.css-175oi2r.r-eqz5dr.r-1wbh5a2.r-dnmrzs) {
             div.css-175oi2r:has(> .css-175oi2r.r-1loqt21.r-1otgn73):not(:has(> .r-k200y)):not(.r-aaxvxr) {
                     align-self: flex-end;
+            }
+        }
+    }
+    
+    /* Chat max width */
+    .r-1ohmcn5 {
+        max-width: chatMaxWidth;
+    }
+    
+    if autoHideLeftMenu {
+        /* Left sidebar */
+        .css-1h5qwio {
+            max-width: 60px;
+
+            /* Logo */
+            .css-aykoyv {
+                overflow: hidden;
+            }
+
+            /* Main menu */
+            .css-1kkt86i {
+                /* Sub menu */
+                .css-1vg0vyr {
+                    opacity: 0;
+                    display: none;
+                }
+
+                /* Icons */
+                svg {
+                    min-width: 20px;
+                }
+
+                /* Labels */
+                span {
+                    opacity: 0;
+
+                }
+            }
+
+            /* Resources + Social links */
+            .css-qkx1pr {
+                opacity: 0;
+            }
+
+            &:has(*:focus),
+            &:has(*:hover),
+            &:hover,
+            &:focus {
+                transition: max-width 0.5s ease-in;
+                max-width: 100%;
+
+                .css-1kkt86i span {
+                    transition: opacity 0.5s ease-in;
+                    opacity: 1;
+                }
+
+                .css-1vg0vyr {
+                    transition: all 0.5s ease-in;
+                    opacity: 1;
+                    display: flex;
+                }
+
+                .css-qkx1pr {
+                    opacity: 1;
+                    transition: opacity 0.5s ease-in;
+                }
             }
         }
     }
