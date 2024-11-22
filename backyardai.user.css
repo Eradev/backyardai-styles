@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           backyard.ai/chat
 @namespace      github.com/eradev
-@version        1.4.1
+@version        1.4.2
 @description    Styles for backyard.ai/chat
 @author         Eradev
 @updateURL      https://raw.githubusercontent.com/Eradev/backyardai-styles/master/backyardai.user.css
@@ -47,7 +47,7 @@
     }
     
     /* Align edit button to bottom */
-    if editAlignBottom {https://backyard.ai/chat/cm3rvnc5k7nr614czbyn2t2wb
+    if editAlignBottom {
         div:has(>.css-175oi2r.r-eqz5dr.r-1wbh5a2.r-dnmrzs) {
             div.css-175oi2r:has(> .css-175oi2r.r-1loqt21.r-1otgn73):not(:has(> .r-k200y)):not(.r-aaxvxr) {
                 align-self: flex-end;
