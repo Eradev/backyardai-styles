@@ -1,38 +1,39 @@
 /* ==UserStyle==
 @name           backyard.ai/chat
 @namespace      github.com/eradev
-@version        1.5.0
+@version        1.6.0
 @description    Styles for backyard.ai/chat
 @author         Eradev
 @updateURL      https://raw.githubusercontent.com/Eradev/backyardai-styles/master/backyardai.user.css
 @preprocessor   stylus
 
-@var color chatBubbleColor            "Chat bubble background color"      #1c2123
-@var range chatBubbleOpacity          "Chat bubble background opacity"    [0.75,0,1,0.05]
-@var color plainTextColor             "Plain text color"                  #cfd8db
-@var color quotesTextColor            "Quotes text color"                 #f1dbbd
-@var color asterisksTextColor         "Asterisks text color"              #a5c7e6
+@var color chatBubbleColor            "Chat bubble background color (Char)" #1c2123
+@var color chatBubbleColorAlt         "Chat bubble background color (User)" #1c2123
+@var range chatBubbleOpacity          "Chat bubble background opacity"      [0.75,0,1,0.05]
+@var color plainTextColor             "Plain text color"                    #cfd8db
+@var color quotesTextColor            "Quotes text color"                   #f1dbbd
+@var color asterisksTextColor         "Asterisks text color"                #a5c7e6
 
-@var range chatBackgroundImageOpacity "Chat background image opacity"     [0.5,0,1,0.05]
-@var range chatBackgroundOpacity      "Chat background opacity"           [0.5,0,1,0.05]
-@var color chatBackgroundColor        "Chat background color"             #0a0c0d
+@var range chatBackgroundImageOpacity "Chat background image opacity"       [0.5,0,1,0.05]
+@var range chatBackgroundOpacity      "Chat background opacity"             [0.5,0,1,0.05]
+@var color chatBackgroundColor        "Chat background color"               #0a0c0d
 
-@var checkbox autoHideLeftMenu        "Auto-hide left menu"               0
+@var checkbox autoHideLeftMenu        "Auto-hide left menu"                 0
 
-@var text chatFontSize                "Chat font size"                    16px
-@var text chatMaxWidth                "Chat max width"                    876px
-@var text chatBubbleMaxWidth          "Chat bubble max width"             900px
+@var text chatFontSize                "Chat font size"                      16px
+@var text chatMaxWidth                "Chat max width"                      876px
+@var text chatBubbleMaxWidth          "Chat bubble max width"               900px
 
-@var text charPicsSize                "Character pics size"               40px
-@var checkbox keepCharPicsRatio       "Keep character pic ratio"          0
+@var text charPicsSize                "Character pics size"                 40px
+@var checkbox keepCharPicsRatio       "Keep character pic ratio"            0
 
-@var checkbox addAsterisks            "Add asterisks"                     0
-@var checkbox hideEmptyLines          "Hide empty lines"                  0
+@var checkbox addAsterisks            "Add asterisks"                       0
+@var checkbox hideEmptyLines          "Hide empty lines"                    0
 
-@var checkbox editAlignBottom         "Align edit button to bottom"       0
+@var checkbox editAlignBottom         "Align edit button to bottom"         0
 
-@var text popupMaxWidth               "Popup max width"                   680px
-@var text popupMinHeight              "Popup min height"                  auto
+@var text popupMaxWidth               "Popup max width"                     680px
+@var text popupMinHeight              "Popup min height"                    auto
 
 ==/UserStyle== */
 
@@ -163,12 +164,19 @@
             }
         }
     }
+    
+    /* User chat bubble */
+    .r-1otgn73:nth-child(odd) {
+        .css-175oi2r.r-eqz5dr.r-1wbh5a2.r-dnmrzs .r-15rkbz5 {
+            background-color: chatBubbleColorAlt;
+        }
+    }
 
     /* Chat bubbles */
     .css-175oi2r.r-eqz5dr.r-1wbh5a2.r-dnmrzs {
         /* Background */
         .r-15rkbz5 {
-             background-color: chatBubbleColor;
+            background-color: chatBubbleColor;
         }
         .r-lsa89y {
             opacity: chatBubbleOpacity;
