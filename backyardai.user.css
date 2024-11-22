@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           backyard.ai/chat
 @namespace      github.com/eradev
-@version        1.2.0
+@version        1.2.1
 @description    Styles for backyard.ai/chat
 @author         Eradev
 @updateURL      https://raw.githubusercontent.com/Eradev/backyardai-styles/master/backyardai.user.css
@@ -25,7 +25,7 @@
 
 ==/UserStyle== */
 
-@-moz-document url-prefix(backyard.ai/chat) {
+@-moz-document url-prefix("https://backyard.ai/chat") {
     .r-1aockid {
         width: sizeCharPics;
             
