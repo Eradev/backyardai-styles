@@ -12,6 +12,7 @@ By default, the options are set as they are on the website with the dark theme.
 * Custom chat max width.
 * Custom chat bubble background color and opacity, font size, and max width.
 * Custom chat background image opacity.
+* Custom chat background color and opacity.
 * Custom size for the edit popup.
 * Display the asterisks in the chat bubbles.
 * Hide empty lines in the chat bubbles.
