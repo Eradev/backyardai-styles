@@ -1,34 +1,42 @@
 /* ==UserStyle==
 @name           backyard.ai/chat
 @namespace      github.com/eradev
-@version        1.3.1
+@version        1.4.0
 @description    Styles for backyard.ai/chat
 @author         Eradev
 @updateURL      https://raw.githubusercontent.com/Eradev/backyardai-styles/master/backyardai.user.css
 @preprocessor   stylus
 
-@var color colorChatBackground "Chat background color"       #1c2123
-@var color colorPlainText      "Plain text color"            #cfd8db
-@var color colorQuotesText     "Quotes text color"           #f1dbbd
-@var color colorAsterisksText  "Asterisks text color"        #a5c7e6
+@var color chatBubbleColor       "Chat bubble background color"      #1c2123
+@var range chatBubbleOpacity     "Chat bubble background opacity"    [0.75,0,1,0.05]
+@var color plainTextColor        "Plain text color"                  #cfd8db
+@var color quotesTextColor       "Quotes text color"                 #f1dbbd
+@var color asterisksTextColor    "Asterisks text color"              #a5c7e6
 
-@var checkbox autoHideLeftMenu "Auto-hide left menu"         0
+@var range chatBackgroundOpacity "Chat background opacity"           [0.5,0,1,0.05]
 
-@var text chatFontSize         "Chat font size"              16px
-@var text chatMaxWidth         "Chat max width"              876px
-@var text chatBubbleMaxWidth   "Chat bubble max width"       900px
+@var checkbox autoHideLeftMenu   "Auto-hide left menu"               0
 
-@var text sizeCharPics         "Character pics size"         40px
-@var checkbox keepRatio        "Keep character pic ratio"    0
+@var text chatFontSize           "Chat font size"                    16px
+@var text chatMaxWidth           "Chat max width"                    876px
+@var text chatBubbleMaxWidth     "Chat bubble max width"             900px
 
-@var checkbox addAsterisks     "Add asterisks"               0
-@var checkbox editAlignBottom  "Align edit button to bottom" 0
+@var text charPicsSize           "Character pics size"               40px
+@var checkbox keepCharPicsRatio  "Keep character pic ratio"          0
+
+@var checkbox addAsterisks       "Add asterisks"                     0
+@var checkbox hideEmptyLines     "Hide empty lines"                  0
+
+@var checkbox editAlignBottom    "Align edit button to bottom"       0
+
+@var text popupMaxWidth          "Popup max width"                   680px
+@var text popupMinHeight         "Popup min height"                  auto
 
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://backyard.ai/chat") {
     .r-1aockid {
-        width: sizeCharPics;
+        width: charPicsSize;
             
         /* Ratio */
         if keepRatio {
@@ -42,8 +50,28 @@
     if editAlignBottom {https://backyard.ai/chat/cm3rvnc5k7nr614czbyn2t2wb
         div:has(>.css-175oi2r.r-eqz5dr.r-1wbh5a2.r-dnmrzs) {
             div.css-175oi2r:has(> .css-175oi2r.r-1loqt21.r-1otgn73):not(:has(> .r-k200y)):not(.r-aaxvxr) {
-                    align-self: flex-end;
+                align-self: flex-end;
             }
+        }
+    }
+    
+    /* Chat background image */
+    img[alt="Background Image"] {
+        opacity: chatBackgroundOpacity;
+    }
+    
+    /* Popup */
+    .r-1lkb4xv > div {
+        max-width: popupMaxWidth !important;
+        min-height: popupMinHeight;
+        
+        div:has(> .ProseMirror) {
+            height: 100%;
+            max-height: 100% !important;
+        }
+        mzie
+        div:has(> .css-ltaucg), div:has(> .css-18mziex) {
+            flex-grow: 1;
         }
     }
     
@@ -122,27 +150,36 @@
     .css-175oi2r.r-eqz5dr.r-1wbh5a2.r-dnmrzs {
         /* Background */
         .r-15rkbz5 {
-            background-color: colorChatBackground;
+             background-color: chatBubbleColor;
+        }
+        .r-lsa89y {
+            opacity: chatBubbleOpacity;
         }
         
         /* Font size */
         .r-ubezar {
             font-size: chatFontSize;
+            
+            if hideEmptyLines {
+                &:empty {
+                    display: none;
+                }
+            }
         }
 
         /* Plain-text */
         .r-zsjf4b {
-            color: colorPlainText;
+            color: plainTextColor;
         }
 
         /* Between quotes (" ") */
         .r-mrp6qo {
-            color: colorQuotesText;
+            color: quotesTextColor;
         }
 
         /* Between asterisks (* *) */
         .r-1b1ke60 {
-            color: colorAsterisksText;
+            color: asterisksTextColor;
                 
             /* Add asterisks back */
             if addAsterisks {
