@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           backyard.ai/chat
 @namespace      github.com/eradev
-@version        1.6.0
+@version        1.7.0
 @description    Styles for backyard.ai/chat
 @author         Eradev
 @updateURL      https://raw.githubusercontent.com/Eradev/backyardai-styles/master/backyardai.user.css
@@ -19,6 +19,7 @@
 @var color chatBackgroundColor        "Chat background color"               #0a0c0d
 
 @var checkbox autoHideLeftMenu        "Auto-hide left menu"                 0
+@var text charRightMenuWidth          "Right Character Sidebar Size"        264px
 
 @var text chatFontSize                "Chat font size"                      16px
 @var text chatMaxWidth                "Chat max width"                      876px
@@ -218,5 +219,10 @@
                 }
             }
         }
+    }
+    
+    /* Character Sidebar */
+    .css-xfcwax {
+        width: charRightMenuWidth;
     }
 }

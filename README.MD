@@ -20,6 +20,7 @@ By default, the options are set as they are on the website with the dark theme.
 * Restore the characters' pictures ratio.
 * Align the edit button to the bottom of the chat bubbles.
 * Auto-hide the left menu.
+* Custom character side bar width.
 
 ## Samples
 
