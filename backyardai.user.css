@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           backyard.ai/chat
 @namespace      github.com/eradev
-@version        1.7.0
+@version        1.8.0
 @description    Styles for backyard.ai/chat
 @author         Eradev
 @updateURL      https://raw.githubusercontent.com/Eradev/backyardai-styles/master/backyardai.user.css
@@ -32,6 +32,7 @@
 @var checkbox hideEmptyLines          "Hide empty lines"                    0
 
 @var checkbox editAlignBottom         "Align edit button to bottom"         0
+@var checkbox alwaysShowSideButtons   "Always show side buttons"            0
 
 @var text popupMaxWidth               "Popup max width"                     680px
 @var text popupMinHeight              "Popup min height"                    auto
@@ -224,5 +225,17 @@
     /* Character Sidebar */
     .css-xfcwax {
         width: charRightMenuWidth;
+    }
+    
+    /* Bubble side buttons */
+    if alwaysShowSideButtons 
+    {
+        .r-1otgn73 
+        {
+            &:has(svg.tabler-icon-dots),
+            &:has(svg.tabler-icon-edit) {
+                opacity: 1 !important;
+            }
+        }
     }
 }
